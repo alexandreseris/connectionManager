@@ -1,0 +1,53 @@
+https://dzone.com/articles/executable-package-pip-install
+https://github.com/boumabcd/connectionManager
+
+
+rendre les gestionnaire de mot de passe compatible avec les context manager pour le fermer automatiquement quand plus besoin 
+vérifier si les lignes customs ont des valeurs
+
+
+faire une class ConnectionOption avec comme params: connectionField, keepassField, value, mandatory, fonctiondeconversion de donnée (ou type)
+    si connectionField is not None et keepassField is None; keepassField = connectionField
+
+créer des exceptions appropriées
+
+revoir les interfaces sql, les standardiser (execSelect, execSelectYield, execNoSelect : modes à passer à la methode exec)
+    voir aussi pour les retours de select: avec colonnes, sans colonnes, etc. si possible pour les sans colonnes toujours renvoyer un tuple
+donner la possibilité d'ajouter des classes de drivers manuellement à l'obj conn
+
+vérifier si le ssh marche pour les longues lignes de commandes
+
+typer les varibles
+
+faire la doc des fonctions
+traduire les messages et la doc en anglais
+
+
+faire un setup pour pouvoir installer facilement avec pip wheel machin
+    éventuellement déposer le package final sur le dépot pypi (oupa)
+écrire des tests
+
+revoir l'interface pour faire un système de callback:
+    l'inetrface a la méthode exec, qui appelle self._exec(...) puis qui del connectioninfos et _exec qui n'est pas implémenté
+    en créant un driver, on implémente _exec pour y intégrer le code poru faire les requtes, mais on ne redéfinit pas exec
+
+faire une fonction de classe qui permet de lister les driver dispos
+
+rajouter à l'interface sql: 
+    méthode commit
+    set du mode auto commit
+    des exceptions courantes comme contraintes d'intégrité, erreur de synthaxe
+    le nombre max d'insert
+    le port par défaut pour la connexion
+    récupération de la version du serveur
+    récup des tables et colonnes de la bdd
+
+intégrer panda:
+    mettre dans le man la possibilité de faire un join avec pandas: 
+    import pandas as pd
+    convert la list de res en pd.DataFrame()
+    pd.merge(list1,list2,on='Product_ID') on est utilisé pour les jointures naturelles, sinon on peut préciser left_on= et right_on=
+    le param how= permet de préciser le type de jointure ('outter', 'left', 'right', 'inner')
+    indicator=True permet de rajouter une colonne calculé qui met dans quelle liste l'item est présent (colonne _merge)
+
+faire une interface en ligne de commande???
