@@ -4,21 +4,21 @@
 
 _currently in developpment!_
 
-This project allow you to connect to usual services (sql, ssh, etc...).
+This project allow you to connect to usual services (sql, ssh, etc...).  
 Operations on the connection such as execute a command/query and output of theses operations are standardized so you don't have to worry about which method to call on a specific lib.
 
 ## Requiered
 
-Currently, this project is based on a Keepass file to retrieve connection data
+Currently, this project is based on a Keepass file to retrieve connection data  
 Later the *ConnectionManager* class will accept any *passwordManager*, so you'll be able to create custom interface for your favorite password manager if not implemented.
 
 On *ConnectionManager* init:
 
 - The class will try to retrieve a configuration file is located in your user home directory in the sub directory .connectionManagerpy/config.py
-This file should contain a dict variable *configDict* with the following keys: *keePassFilePath*, *keePassNotesSeparator*, *driversTypes*, *password* (not recommended for security reason)
-*driversTypes* should be a dict mapping driver type (ssh, sql, etc) to the xpath root of the entries in the Keepass file
-- Else it will fallback to the *configDict* paramter (same keys as above)
-you can specify some custom keys for *configDict* in the constructor to override your configuration file if needed
+  - This file should contain a dict variable *configDict* with the following keys: *keePassFilePath*, *keePassNotesSeparator*, *driversTypes*, *password* (not recommended for security reason)
+  - *driversTypes* should be a dict mapping driver type (ssh, sql, etc) to the xpath root of the entries in the Keepass file
+- Else it will fallback to the *configDict* paramter (same keys as above)  
+you can specify some custom keys for *configDict* in the constructor to override your configuration file if needed  
 
 The Keepass file can be structured:
 
