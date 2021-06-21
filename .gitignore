@@ -1,6 +1,9 @@
 __pycache__/
+.pytest_cache/
 
 # Editor directories and files
 .vscode
 
 ignoregit/
+
+connectionManagerPy/var/*
